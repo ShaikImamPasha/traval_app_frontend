@@ -1,0 +1,16 @@
+.main{
+    margin: 20px 20px;
+    box-shadow: 2px 2px 10px 2px black;
+   
+    font-family: 'Times New Roman', Times, serif;
+}
+.imgs{
+    width: 310px;
+    height: 150px;
+}
+.rs{
+    font-weight: bold;
+}
+.imUp{
+    display:  table-caption;
+}

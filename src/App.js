@@ -1,9 +1,9 @@
+import {Home} from "./pages";
 import './App.css';
-
 function App() {
   return (
     <div className="App">
-        hiii
+     <Home></Home>
     </div>
   );
 }
