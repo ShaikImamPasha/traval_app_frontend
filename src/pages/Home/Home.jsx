@@ -1,7 +1,7 @@
-import { NaveBar,Hotalcard } from "../../componentes";
+import { NaveBar,Hotalcard,Loader,Catagerys } from "../../componentes";
 import { useEffect,useState } from "react";
+import InfiniteScroll from 'react-infinite-scroll-component';
 import "./Home.css";
-import axios from "axios";
 export const Home=()=>{
       const [hasMore,sethasMore]=useState(true);
       const [currentIndex,setcurentIndex]=useState(16);
@@ -10,7 +10,7 @@ export const Home=()=>{
       useEffect(()=>{
             (async ()=>{
                   try{
-                      fetch("https://super-pig-coat.cyclic.app/api/hotels_details")
+                      fetch("https://filthy-gray-coral.cyclic.app/api/hotels_details")
                       .then(res=> res.json())
                       .then((D)=>{
                         settestData(D);
@@ -22,12 +22,33 @@ export const Home=()=>{
                   }
             })()
       },[])
+      const fetchMore=()=>{
+            if(hotaldata.length>=testData.length){
+                  sethasMore(false);
+                  return
+            }
+            setTimeout(()=>{
+                  if(hotaldata && hotaldata.length>0){
+                        setHotaldata(hotaldata.concat(testData.slice(currentIndex,currentIndex+16)));
+                        setcurentIndex(cur=> cur+16);
+                  }
+            },2000)
+      }
      return(
       <>
            <NaveBar></NaveBar>
-           <div className="hotalData">
-      {hotaldata && hotaldata.map((e)=><Hotalcard key={e._id} e={e} />)}
-      </div>
+           <Catagerys></Catagerys>
+                    <InfiniteScroll
+                    dataLength={hotaldata.length}
+                    next={fetchMore}
+                    hasMore={hasMore}
+                    loader={hotaldata ? <Loader></Loader>:null}
+                    endMessage={<h4 style={{display:"flex",justifyContent:"center"}}>you have seen all</h4>}
+                    >
+             <div className="hotalData">
+                  {hotaldata && hotaldata.map((e)=><Hotalcard key={e._id} e={e} />)}
+             </div>
+                    </InfiniteScroll>
            </>
      )
 }

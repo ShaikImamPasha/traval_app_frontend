@@ -5,8 +5,8 @@ export const Hotalcard=({e})=>{
         <div className="main">
         <div>
             <div className="imUp">
-     <img className="imgs"src={image}></img>
-            <div>
+               <img className="imgs"src={image}></img>
+              <div>
                 <h4>
                 <span>{adderess} {state}</span>&nbsp;  &nbsp;  &nbsp;  &nbsp; 
                 <span>&#9733; {rating}</span>

@@ -1,3 +1,6 @@
+.heading-1{
+ color: rgb(255, 173, 20);
+}
 *{
      font-family: 'Times New Roman', Times, serif;
      margin-bottom: 5px;
@@ -7,9 +10,6 @@
   color: black;
   display: flex;
   justify-content: space-between;
-}
-.link{
-    color: rgb(255, 173, 20);
 }
 .form-option{
     font-size: 17px;
@@ -32,4 +32,12 @@
     border-radius: 7px;
     border: 2px rgba(0, 0, 0, 0.178) solid;
     cursor: pointer;
+}
+.main1{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 14px;
+  flex-wrap: wrap;
+  border: 1px rgba(0, 0, 0, 0.103) solid;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.13);
 }

@@ -3,15 +3,15 @@ import { Sling as Hamburger } from 'hamburger-react';
 export const NaveBar=()=>{
     return(
         <>
-        <header className="heading d-flex align-center">
+        <header className="main1">
             <div>
         <h1 className="heading-1">
-            <a className="link" href="/">Traval..</a>
+            Traval..
         </h1>
           </div>
     <div>
         <h1>
-            <div className="form-container d-flex align-center cursor-pointer shadow">
+            <div className="main1" style={{borderRadius: "5px"}}>
             <span className="form-option">anywhere</span>
             <span className="form-option">anywhere</span>
             <span className="form-option">anywhere</span>
@@ -21,7 +21,7 @@ export const NaveBar=()=>{
   </div>
   <div>
     <nav className="d-flex align-center gap-large">
-            <div class="nav d-flex align-center cursor-pointer">
+            <div className="nav d-flex align-center cursor-pointer">
                <span className="material-icons-outlined">
                  <Hamburger size={30}></Hamburger>
                 </span>
