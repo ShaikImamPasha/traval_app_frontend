@@ -1,9 +1,14 @@
 import "./Hotalcard.css";
+import { useNavigate } from "react-router-dom";
 export const Hotalcard=({e})=>{
     const {_id,name,image,adderess,state,rating,price}=e;
+    const navigate=useNavigate();
+    const change=()=>{
+        navigate(`singlehotal/${_id}`);
+    }
     return(
         <div className="main">
-        <div>
+        <div onClick={change}>
             <div className="imUp">
                <img className="imgs"src={image}></img>
               <div>

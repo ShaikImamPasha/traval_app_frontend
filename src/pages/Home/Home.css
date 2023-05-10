@@ -4,3 +4,9 @@
     align-items: center;
     justify-content: center;
 }
+.n_c{
+    overflow: hidden;
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+}

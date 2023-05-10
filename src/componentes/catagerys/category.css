@@ -3,4 +3,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    cursor: pointer;
+}
+.ca{
+    text-decoration: underline;
 }
