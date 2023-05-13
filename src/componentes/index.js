@@ -3,3 +3,7 @@ export {Hotalcard} from "./Hotalcard/Hotalcard.jsx";
 export {Loader} from "./loadSpiner/Loader.jsx";
 export {Catagerys} from "./catagerys/Catagerys.js";
 export {HotalImages} from "./HotalImages/HotalImages.jsx";
+export {HotalDetails} from "./HotalDetails/HotalDetails.jsx";
+export {PriceDetails} from "./PriceDetails/PriceDetails.jsx";
+export {DateSelector} from "./DateSelector/DateSelector.jsx";
+export {SearchBar} from "./SearchBar/SearchBar.jsx";

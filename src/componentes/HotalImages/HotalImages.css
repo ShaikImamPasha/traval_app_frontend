@@ -1,0 +1,21 @@
+.subImage{
+  width: 260px;
+  height: 197px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.flex{
+    display: flex;
+     padding-left: 150px;
+
+}
+.mainimage{
+    width: 500px;
+    height: 400px;
+}
+.subimageflex{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 10px;
+  padding-right: 130px;
+}

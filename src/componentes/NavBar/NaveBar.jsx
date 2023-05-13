@@ -1,6 +1,13 @@
 import "./NavBar.css";
 import { Sling as Hamburger } from 'hamburger-react';
+import { useDatacontest } from "../../contest";
 export const NaveBar=()=>{
+    const {setDate}=useDatacontest();
+    const dateFun=()=>{
+        setDate({
+            type:"open_search_bar"
+        })
+    }
     return(
         <>
         <header className="main1">
@@ -11,7 +18,7 @@ export const NaveBar=()=>{
           </div>
     <div>
         <h1>
-            <div className="main1" style={{borderRadius: "5px"}}>
+            <div className="main1" onClick={dateFun} style={{borderRadius: "5px"}}>
             <span className="form-option">anywhere</span>
             <span className="form-option">anywhere</span>
             <span className="form-option">anywhere</span>

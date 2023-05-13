@@ -1,0 +1,16 @@
+.searchBar{
+    display: flex;  
+    justify-content: center; 
+}
+.ser1{
+    width: 80px;
+    height: 54px;
+    background-color:  rgb(255, 173, 20);
+    border-radius: 3px;
+    border-color: rgba(0, 0, 0, 0.226);
+}
+input{
+    border: none;
+    width: 150px;
+    height: 30px;
+}

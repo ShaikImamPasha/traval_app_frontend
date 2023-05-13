@@ -4,13 +4,15 @@ import {BrowserRouter, BrowserRouter as Router} from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { CatageryContestFun } from './catagery-contest';
+import { CatageryContestFun,DateContestFun} from './contest';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <CatageryContestFun>  
-      <App/>
+    <CatageryContestFun>
+        <DateContestFun>
+        <App/>
+          </DateContestFun>  
       </CatageryContestFun>
     </BrowserRouter>
   </React.StrictMode>

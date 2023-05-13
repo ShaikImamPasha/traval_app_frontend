@@ -1,8 +1,23 @@
-import { useParams } from "react-router-dom"
-export const HotalImages=()=>{
-    const {id}=useParams();
-    console.log(id);
+import "./HotalImages.css";
+export const HotalImages=({data})=>{
+    const {image,imageArr,name,country}=data;
     return(<>
-    <h1>{id}</h1>
+       <div><h3 style={{paddingLeft: "150px"}}>{name},{country}</h3></div>
+       <div className="flex"> 
+            <div>
+                 <img className="mainimage" src={image}></img>
+            </div>
+            <div>
+                <span className="subimageflex">
+               {imageArr && imageArr.map((e,id)=>{
+                return(
+                    <>
+                          <img className="subImage" src={e}></img>
+                    </>
+                )
+               })}
+               </span>
+               </div>
+       </div>
     </>)
 }

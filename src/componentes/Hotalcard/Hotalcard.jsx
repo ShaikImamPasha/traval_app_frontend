@@ -4,7 +4,7 @@ export const Hotalcard=({e})=>{
     const {_id,name,image,adderess,state,rating,price}=e;
     const navigate=useNavigate();
     const change=()=>{
-        navigate(`singlehotal/${_id}`);
+        navigate(`singlehotal/${state}/${name}/${_id}`);
     }
     return(
         <div className="main">

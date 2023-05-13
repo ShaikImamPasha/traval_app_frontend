@@ -2,7 +2,7 @@ import "./category.css";
 import { useState,useEffect } from "react";
 import axios from "axios";
 import { AiOutlineRight,AiOutlineLeft} from "react-icons/ai";
-import { useCatagerycontest } from "../../catagery-contest";
+import { useCatagerycontest } from "../../contest";
 export const Catagerys=()=>{
     const [catagerys,setCatagerys]=useState([]);
     const [cI,setCatagerysIndex]=useState(0);
@@ -32,7 +32,7 @@ export const Catagerys=()=>{
             {catagerys.map((e,id)=>{
                 return <span className={`${catageryState==e.category ? "ca":""} `} onClick={()=>cset(e.category)}>{e.category}</span>
             })}
-           {cI<=10 && <AiOutlineRight onClick={inc}></AiOutlineRight> }
+           {cI<=10 &&  <AiOutlineRight onClick={inc}></AiOutlineRight> }
         </section>
         </>
     )
