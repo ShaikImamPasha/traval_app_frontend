@@ -15,6 +15,26 @@ export const DateReduser=(state,{type,payload})=>{
                 ...state,
                 CheackIn:payload
             };
+        case "destination":
+            return{
+                ...state,
+                destination:payload
+            }
+            case "guests":
+                return{
+                    ...state,
+                    guests:payload
+                }
+            case "close_searcresult":
+                return{
+                    ...state,
+                    close_searcresult: false
+                }
+                case "open_search":
+                    return{
+                        ...state,
+                        close_searcresult:true
+                    }
         default:
             return state;
      }

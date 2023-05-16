@@ -1,0 +1,13 @@
+.pdetails{
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pdetails:hover{
+    background-color: black;
+    color: white;;
+}

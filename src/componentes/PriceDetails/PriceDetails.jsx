@@ -1,8 +1,17 @@
 import "./PriceDetails.css";
 import {AiFillStar} from "react-icons/ai";
 import "./PriceDetails.css";
+import { DateSelector } from "../DateSelector/DateSelector";
+import {useDatacontest} from "../../contest";
 export const PriceDetails=({data})=>{
    const {price,rating}=data;
+   const {guests,setDate}=useDatacontest();
+   const handelGusts=(event)=>{
+  setDate({
+    type:"guests",
+    payload:event.target.value
+  })
+   }
     return(
         <>
         <div className="pricemain">
@@ -16,15 +25,22 @@ export const PriceDetails=({data})=>{
                 </div>
                 <div>
                     <div className="gap d-flex">
+                        <div>
                         <label>check in</label>
+                        <div>
+                        <DateSelector placeholder="cin"></DateSelector>
+                        </div>
+                        </div>
+                        <div>
                         <label>check out</label>
+                        <span><DateSelector placeholder="cout"></DateSelector></span>
+                        </div>
                     </div>
                 </div>
                 <div>
                     <div className="gu">
                         <div>
-                            <p>Guests</p>
-                            <p>2 guests</p>
+ Guests<div>{guests<=0 ? <input onChange={handelGusts} ></input>:  <p>{<input  onChange={handelGusts} type="number" value={guests}></input>} guests</p>}</div>
                         </div>
                     </div>
                 </div>

@@ -9,8 +9,14 @@ export const DateSelector=(p)=>{
         payload:data
     })
   }
+  const changefoces=()=>{
+      setDate({
+        type: "close_searcresult"
+      })
+  }
     return(
     <DatePicker  onChange={(date)=>(onchangedata(date))}
+    onFocus={changefoces}
      selected={p.placeholder=="cout"?CheackOut:CheackIn} dateFormat="dd/MM/yyyy" 
      placeholderText="Add dates" closeOnScroll={true}/>)
 }

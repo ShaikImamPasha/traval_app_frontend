@@ -7,3 +7,4 @@ export {HotalDetails} from "./HotalDetails/HotalDetails.jsx";
 export {PriceDetails} from "./PriceDetails/PriceDetails.jsx";
 export {DateSelector} from "./DateSelector/DateSelector.jsx";
 export {SearchBar} from "./SearchBar/SearchBar.jsx";
+export {Filter} from "./Filters";

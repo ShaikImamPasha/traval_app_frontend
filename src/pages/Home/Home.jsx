@@ -1,8 +1,8 @@
-import { NaveBar,Hotalcard,Loader,Catagerys,DateSelector,SearchBar } from "../../componentes";
+import { NaveBar,Hotalcard,Loader,Catagerys,SearchBar, HotalDetails,Filter } from "../../componentes";
 import { useEffect,useState } from "react";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useCatagerycontest } from "../../contest";
-import { useDatacontest } from "../../contest";
+import { useDatacontest,useFiltercontest } from "../../contest";
 import "./Home.css";
 export const Home=()=>{
       const {isSearch}=useDatacontest();
@@ -14,7 +14,7 @@ export const Home=()=>{
       const [currentIndex,setcurentIndex]=useState(16);
       const [testData,settestData]=useState([]);
       const [hotaldata,setHotaldata]=useState([]);
-      console.log(catageryState);
+      const {isFiltermodel}=useFiltercontest();
       useEffect(()=>{
             (async ()=>{
                   try{
@@ -24,7 +24,6 @@ export const Home=()=>{
                         setIntiailloader(false);
                         settestData(D);
                         setHotaldata(D.length<16?D:D.slice(0,16));
-                        console.log(hotaldata.length);
                        if(hotaldata.length===0){
                         setLoader(true);
                        }else{
@@ -66,7 +65,9 @@ export const Home=()=>{
            {isSearch && <SearchBar></SearchBar>}
            <Catagerys></Catagerys>
        </div>
-       {console.log(l)}
+       <div className="absolute">
+            {isFiltermodel &&<Filter></Filter>}
+       </div>
        <div className="middle">
                   {intiaill && <Loader></Loader>}
                 {hotaldata.length!==0? <InfiniteScroll

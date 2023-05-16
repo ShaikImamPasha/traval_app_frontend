@@ -2,6 +2,10 @@ import "./NavBar.css";
 import { Sling as Hamburger } from 'hamburger-react';
 import { useDatacontest } from "../../contest";
 export const NaveBar=()=>{
+    const { CheackIn,
+        CheackOut,
+        guests,
+        destination}=useDatacontest();
     const {setDate}=useDatacontest();
     const dateFun=()=>{
         setDate({
@@ -19,9 +23,17 @@ export const NaveBar=()=>{
     <div>
         <h1>
             <div className="main1" onClick={dateFun} style={{borderRadius: "5px"}}>
-            <span className="form-option">anywhere</span>
-            <span className="form-option">anywhere</span>
-            <span className="form-option">anywhere</span>
+            <span className="form-option">{destination || "anywhere"}</span>
+            <span className="form-option"> {CheackIn && CheackOut 
+            ? `${CheackIn.toLocaleDateString("en-US", {
+              day: "numeric",
+              month: "short",
+            })} - ${CheackOut.toLocaleDateString("en-US", {
+              day: "numeric",
+              month: "short",
+            })}`
+            : "Any Week"}</span>
+            <span className="form-option">{guests>0 ?`${guests} guests`:"anywhere"}</span>
              <button className="ser" type="submit"><i class="fa fa-search"></i></button>
             </div>
         </h1>

@@ -1,0 +1,16 @@
+.noofbrb{
+    width: 60px;
+    height: 25px;
+    border: 1px solid #00000070;
+    border-radius: 3px;
+}
+.noofbrb:hover{
+    background-color: black;
+    color: white;
+}
+.no{
+    margin-left: 20px;
+}
+.rms{
+    padding-top: 22px;
+ }

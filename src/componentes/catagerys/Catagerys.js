@@ -2,11 +2,13 @@ import "./category.css";
 import { useState,useEffect } from "react";
 import axios from "axios";
 import { AiOutlineRight,AiOutlineLeft} from "react-icons/ai";
-import { useCatagerycontest } from "../../contest";
+import { MdOutlineFilterAlt } from 'react-icons/md';
+import { useCatagerycontest,useFiltercontest } from "../../contest";
 export const Catagerys=()=>{
     const [catagerys,setCatagerys]=useState([]);
     const [cI,setCatagerysIndex]=useState(0);
     const [data,setData]=useState([]);
+    const {dispatchfilter}=useFiltercontest();
    const {catageryState,setCatgeryState}=useCatagerycontest();
     useEffect(()=>{
                (async()=>{
@@ -25,6 +27,11 @@ export const Catagerys=()=>{
     const cset=(value)=>{
         setCatgeryState(value)
     }
+    const onchangefilter=()=>{
+        dispatchfilter({
+            type:"open_filter"
+        })
+    }
     return(
         <>
         <section className="category">
@@ -33,6 +40,10 @@ export const Catagerys=()=>{
                 return <span className={`${catageryState==e.category ? "ca":""} `} onClick={()=>cset(e.category)}>{e.category}</span>
             })}
            {cI<=10 &&  <AiOutlineRight onClick={inc}></AiOutlineRight> }
+           <div className="filter" onClick={onchangefilter}>
+            <MdOutlineFilterAlt></MdOutlineFilterAlt>
+            <span>Filter</span>
+        </div>
         </section>
         </>
     )

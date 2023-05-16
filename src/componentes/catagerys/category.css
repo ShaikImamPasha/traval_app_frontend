@@ -8,3 +8,15 @@
 .ca{
     text-decoration: underline;
 }
+.filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 44px;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 45%;
+}
+.filter:hover{
+    box-shadow: 2px 2px 2px gray;
+}
