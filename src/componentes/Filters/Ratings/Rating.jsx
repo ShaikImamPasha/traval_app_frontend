@@ -1,6 +1,14 @@
 import "./Rating.css";
-const rating=["1","2","3","4","5"];
+import { useFiltercontest } from "../../../contest";
+const rating=[1,2,3,4,5];
 export const Rating=()=>{
+    const { dispatchfilter,Rating}=useFiltercontest();
+    const changeRating=(rating)=>{
+          dispatchfilter({
+            type:"Rating",
+            payload:rating
+        })
+    }
     return(
         <>
         <br></br>
@@ -10,7 +18,7 @@ export const Rating=()=>{
         <div className="ratingmain gap">
             {rating.map((e)=>{
                 return(
-                    <div className="ratingdiv cursor">
+             <div onClick={()=>changeRating(e)} className={`ratingdiv cursor ${e===Rating?"sele":" "}`}>
                         {e}&Up&nbsp;
                     </div>
                 )

@@ -17,7 +17,7 @@ export const Properttype=()=>{
               <div className="d-flex gap ">
                   {pdetails.map((e)=>{ 
                     return(
-                        <div className="pdetails cursor"onClick={()=>changeProperttype(e)}>{e}</div>
+                        <div className={`pdetails cursor ${e===propertyType?"sele":""}`}onClick={()=>changeProperttype(e)}>{e}</div>
                         )})}
               </div>
           </div>

@@ -1,4 +1,4 @@
 .searchResult{
     display: flex;
-    
+    flex-wrap: wrap;
 }

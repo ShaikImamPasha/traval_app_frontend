@@ -47,6 +47,21 @@ export const FilterReduser=(state,{type,payload})=>{
                       ...state,
                       propertyType:payload
                     }
+                    case "Rating":
+                      return{
+                        ...state,
+                        Rating:payload
+                      }
+                      case "clearall":
+                        return{
+                          ...state,
+                          priceRange:[100,20000],
+                          noOfBedRooms:"any",
+                          noOfBathroomes:"any",
+                          noOfBeds:"any",
+                          propertyType: "House",
+                          Rating:1
+                        }
             default:
                 return state;
     }

@@ -6,14 +6,15 @@ var han={
     noOfBedRooms:"any",
     noOfBathroomes:"any",
     noOfBeds:"any",
-    propertyType: "any"
+    propertyType: "House",
+    Rating:1
 }
 var FilterContest=createContext(han);
 var FilterContestFun=({children})=>{
     const[{isFiltermodel,priceRange,noOfBedRooms,
-    noOfBathroomes,propertyType,
+    noOfBathroomes,propertyType,Rating,
     noOfBeds},dispatchfilter]=useReducer(FilterReduser,han);
-    return <FilterContest.Provider value={{isFiltermodel,propertyType,priceRange,noOfBedRooms,
+    return <FilterContest.Provider value={{isFiltermodel,Rating,propertyType,priceRange,noOfBedRooms,
     noOfBathroomes,
     noOfBeds,dispatchfilter}}>{children}</FilterContest.Provider>;
 }

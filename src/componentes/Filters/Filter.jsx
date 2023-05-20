@@ -9,6 +9,11 @@ export const Filter=()=>{
       type:"open_filter"
   })
   }
+  const clearall=()=>{ 
+    dispatchfilter({
+      type:"clearall"
+  })
+  }
    return(
     <>
     <div className="filtermain1">
@@ -31,10 +36,10 @@ export const Filter=()=>{
        </div>
        <div className="d-flex button">
            <div>
-                 <button className="bu cursor"style={{color:"black"}}>Clearall</button>
+           <button onClick={clearall} className="bu cursor"style={{color:"black"}}>Clearall</button>
            </div>
            <div>
-                  <button className="bu cursor" style={{backgroundColor:" rgba(255, 0, 0, 0.925)",color:"white"}}>Apply</button>
+                <button className="bu cursor"  onClick={clodefilter} style={{backgroundColor:" rgba(255, 0, 0, 0.925)",color:"white"}}>Apply</button>
            </div>
        </div>
       </div>
