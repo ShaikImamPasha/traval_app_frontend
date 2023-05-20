@@ -1,7 +1,9 @@
 import "./RomesandBeds.css";
 import { useFiltercontest } from "../../../contest/filter-contest/filtercontest";
 export const RomesandBeds=()=>{
-    const {dispatchfilter}=useFiltercontest();
+    const {dispatchfilter,noOfBedRooms,
+        noOfBathroomes,
+        noOfBeds}=useFiltercontest();
     const noofbrb=["any",1,2,3,4,5];
     const changeNoOfBedroomes=(noofbedrooms)=>{
         dispatchfilter({
@@ -41,21 +43,21 @@ export const RomesandBeds=()=>{
                 {noofbrb.map((e)=>{
                     return(
                         <span onClick={()=>changeNoOfBedroomes(e)}
-                         className="noofbrb center center cursor" key={e}><div>{e}</div></span>
+             className={`noofbrb center center cursor ${e===noOfBedRooms?"sele":""}`} key={e}><div>{e}</div></span>
+                         )
+                })}
+            </div>
+            <div className="d-flex no">
+                {noofbrb.map((e)=>{
+                    return(
+                        <span onClick={()=>changeNoOfBeds(e)} className={`noofbrb center center cursor ${e===noOfBeds?"sele":""}`}  key={e}><div >{e}</div></span>
                     )
                 })}
             </div>
             <div className="d-flex no">
                 {noofbrb.map((e)=>{
                     return(
-                        <span onClick={()=>changeNoOfBeds(e)} className="noofbrb center center cursor"  key={e}><div >{e}</div></span>
-                    )
-                })}
-            </div>
-            <div className="d-flex no">
-                {noofbrb.map((e)=>{
-                    return(
-                        <span onClick={()=>changeNoOfBathrooms(e)} className="noofbrb center center cursor" key={e}><div>{e}</div></span>
+                <span onClick={()=>changeNoOfBathrooms(e)} className={`noofbrb center center cursor ${e===noOfBathroomes?"sele":""}`} key={e}><div>{e}</div></span>
                     )
                 })}
             </div>

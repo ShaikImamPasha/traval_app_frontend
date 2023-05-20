@@ -3,7 +3,7 @@ import { useEffect,useState } from "react";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useCatagerycontest } from "../../contest";
 import { useDatacontest,useFiltercontest } from "../../contest";
-import {getHotelsByPrice,Bedrromesbatbed} from "../../utils";
+import {getHotelsByPrice,Bedrromesbatbed,Pt} from "../../utils";
 import "./Home.css";
 export const Home=()=>{
       const {isSearch}=useDatacontest();
@@ -15,7 +15,7 @@ export const Home=()=>{
       const [currentIndex,setcurentIndex]=useState(16);
       const [testData,settestData]=useState([]);
       const [hotaldata,setHotaldata]=useState([]);
-      const {isFiltermodel,priceRange, noOfBedRooms,noOfBathroomes,noOfBeds}=useFiltercontest();
+      const {isFiltermodel,priceRange, noOfBedRooms,noOfBathroomes,noOfBeds,propertyType}=useFiltercontest();
       useEffect(()=>{
             (async ()=>{
                   try{
@@ -59,9 +59,11 @@ export const Home=()=>{
                   }
             },2000)
       }
+      console.log(propertyType);
       const filteredHotelsByPrice = getHotelsByPrice(hotaldata, priceRange);
       const filterbedroomes= Bedrromesbatbed(filteredHotelsByPrice,noOfBedRooms, noOfBathroomes,
             noOfBeds);
+   const filterpt=Pt(filterbedroomes,propertyType);
      return(
       <>
       <div className="relative">
@@ -74,7 +76,7 @@ export const Home=()=>{
        </div>
        <div className="middle">
                   {intiaill && <Loader></Loader>}
-                {filterbedroomes.length!==0? <InfiniteScroll
+                {filterpt.length!==0? <InfiniteScroll
                     dataLength={hotaldata.length}
                     next={fetchMore}
                     hasMore={hasMore}
@@ -82,7 +84,7 @@ export const Home=()=>{
                     endMessage={<h4 style={{display:"flex",justifyContent:"center"}}>you have seen all</h4>}
                     >
              <div className="hotalData">
-                  {filterbedroomes && filterbedroomes.map((e)=><Hotalcard key={e._id} e={e} />)}
+                  {filterpt && filterpt.map((e)=><Hotalcard key={e._id} e={e} />)}
              </div>
        </InfiniteScroll>:<></>}
        </div>

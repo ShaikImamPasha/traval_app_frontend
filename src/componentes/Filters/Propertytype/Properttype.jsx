@@ -1,6 +1,14 @@
 import "./Properttype.css";
+import { useFiltercontest } from "../../../contest";
 const pdetails=["House","Guest House","flat","Hotal"];
 export const Properttype=()=>{
+  const { dispatchfilter,propertyType}=useFiltercontest();
+  const changeProperttype=(p)=>{
+    dispatchfilter({
+      type:"propertyType",
+      payload:p
+  })
+  }
     return(<>
           <div>
               <div>
@@ -9,7 +17,7 @@ export const Properttype=()=>{
               <div className="d-flex gap ">
                   {pdetails.map((e)=>{ 
                     return(
-                        <div className="pdetails cursor">{e}</div>
+                        <div className="pdetails cursor"onClick={()=>changeProperttype(e)}>{e}</div>
                         )})}
               </div>
           </div>

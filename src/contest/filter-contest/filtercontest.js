@@ -3,16 +3,17 @@ import { FilterReduser } from "../../reduser";
 var han={
     isFiltermodel:false,
     priceRange:[100,20000],
-    noOfBedRooms:null,
-    noOfBathroomes:null,
-    noOfBeds:null
+    noOfBedRooms:"any",
+    noOfBathroomes:"any",
+    noOfBeds:"any",
+    propertyType: "any"
 }
 var FilterContest=createContext(han);
 var FilterContestFun=({children})=>{
     const[{isFiltermodel,priceRange,noOfBedRooms,
-    noOfBathroomes,
+    noOfBathroomes,propertyType,
     noOfBeds},dispatchfilter]=useReducer(FilterReduser,han);
-    return <FilterContest.Provider value={{isFiltermodel,priceRange,noOfBedRooms,
+    return <FilterContest.Provider value={{isFiltermodel,propertyType,priceRange,noOfBedRooms,
     noOfBathroomes,
     noOfBeds,dispatchfilter}}>{children}</FilterContest.Provider>;
 }

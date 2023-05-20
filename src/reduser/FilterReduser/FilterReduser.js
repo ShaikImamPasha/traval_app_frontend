@@ -42,6 +42,11 @@ export const FilterReduser=(state,{type,payload})=>{
                     ...state,
                     noOfBeds:payload==="any"?"any":payload==="5+"?5:payload
                   }
+                  case "propertyType":
+                    return{
+                      ...state,
+                      propertyType:payload
+                    }
             default:
                 return state;
     }
