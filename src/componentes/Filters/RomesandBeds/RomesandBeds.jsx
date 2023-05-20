@@ -1,6 +1,26 @@
 import "./RomesandBeds.css";
+import { useFiltercontest } from "../../../contest/filter-contest/filtercontest";
 export const RomesandBeds=()=>{
-    const noofbrb=["any","1","2","3","4","5+"];
+    const {dispatchfilter}=useFiltercontest();
+    const noofbrb=["any",1,2,3,4,5];
+    const changeNoOfBedroomes=(noofbedrooms)=>{
+        dispatchfilter({
+            type:"noOfBedRooms",
+            payload:noofbedrooms
+        })
+    }
+    const changeNoOfBathrooms=(noOfBathroomes)=>{
+        dispatchfilter({
+            type:"noOfBathroomes",
+            payload:noOfBathroomes
+        })
+    }
+    const changeNoOfBeds=(noOfBeds)=>{
+        dispatchfilter({
+            type:"noOfBeds",
+            payload:noOfBeds
+        })
+    }
     return(<>
         <div>
         <span className="pc"><h3>Romes And Beds</h3></span>
@@ -20,21 +40,22 @@ export const RomesandBeds=()=>{
             <div className="d-flex no">
                 {noofbrb.map((e)=>{
                     return(
-                        <span className="noofbrb center center cursor" key={e}><div>{e}</div></span>
+                        <span onClick={()=>changeNoOfBedroomes(e)}
+                         className="noofbrb center center cursor" key={e}><div>{e}</div></span>
                     )
                 })}
             </div>
             <div className="d-flex no">
                 {noofbrb.map((e)=>{
                     return(
-                        <span className="noofbrb center center cursor"  key={e}><div >{e}</div></span>
+                        <span onClick={()=>changeNoOfBeds(e)} className="noofbrb center center cursor"  key={e}><div >{e}</div></span>
                     )
                 })}
             </div>
             <div className="d-flex no">
                 {noofbrb.map((e)=>{
                     return(
-                        <span className="noofbrb center center cursor" key={e}><div>{e}</div></span>
+                        <span onClick={()=>changeNoOfBathrooms(e)} className="noofbrb center center cursor" key={e}><div>{e}</div></span>
                     )
                 })}
             </div>

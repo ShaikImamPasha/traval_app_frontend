@@ -1,6 +1,12 @@
 .searchBar{
     display: flex;  
     justify-content: center; 
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    margin-left: 450px;
+    border: 1px solid rgba(0, 0, 0, 0.342);
+    border-radius: 5px;
 }
 .ser1{
     width: 80px;
@@ -16,7 +22,6 @@ input{
 }
 .destination{
     position: absolute;
-    top: 160px;
     background-color: white;
     overflow-y:auto;
     width: 190px;

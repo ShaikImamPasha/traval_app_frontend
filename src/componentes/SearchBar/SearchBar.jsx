@@ -9,7 +9,6 @@ export const SearchBar=()=>{
     const {catageryState}=useCatagerycontest();
     const [hotaldata,setHotaldata]=useState([]);
     const {setDate,destination,guests,close_searcresult}=useDatacontest();
-    console.log(close_searcresult);
     useEffect(()=>{
         (async ()=>{
           fetch(`https://filthy-gray-coral.cyclic.app/api/hotels_details?category=${catageryState}`)

@@ -26,7 +26,7 @@ export const SearchResultPage=()=>{
     return(<>
     <NaveBar></NaveBar>
     <section className="searchResult">
-    { srd && srd.map((e)=>{return <Hotalcard e={e}></Hotalcard>})}
+    { srd ? srd.map((e)=>{return <Hotalcard e={e}></Hotalcard>}):<p>no data found</p>}
     </section>
     </>)
 }

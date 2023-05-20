@@ -3,6 +3,7 @@ import { useEffect,useState } from "react";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useCatagerycontest } from "../../contest";
 import { useDatacontest,useFiltercontest } from "../../contest";
+import {getHotelsByPrice,Bedrromesbatbed} from "../../utils";
 import "./Home.css";
 export const Home=()=>{
       const {isSearch}=useDatacontest();
@@ -14,7 +15,7 @@ export const Home=()=>{
       const [currentIndex,setcurentIndex]=useState(16);
       const [testData,settestData]=useState([]);
       const [hotaldata,setHotaldata]=useState([]);
-      const {isFiltermodel}=useFiltercontest();
+      const {isFiltermodel,priceRange, noOfBedRooms,noOfBathroomes,noOfBeds}=useFiltercontest();
       useEffect(()=>{
             (async ()=>{
                   try{
@@ -58,6 +59,9 @@ export const Home=()=>{
                   }
             },2000)
       }
+      const filteredHotelsByPrice = getHotelsByPrice(hotaldata, priceRange);
+      const filterbedroomes= Bedrromesbatbed(filteredHotelsByPrice,noOfBedRooms, noOfBathroomes,
+            noOfBeds);
      return(
       <>
       <div className="relative">
@@ -70,15 +74,15 @@ export const Home=()=>{
        </div>
        <div className="middle">
                   {intiaill && <Loader></Loader>}
-                {hotaldata.length!==0? <InfiniteScroll
+                {filterbedroomes.length!==0? <InfiniteScroll
                     dataLength={hotaldata.length}
                     next={fetchMore}
                     hasMore={hasMore}
-                    loader={hotaldata ? <Loader></Loader>:null}
+                    loader={filteredHotelsByPrice ? <Loader></Loader>:null}
                     endMessage={<h4 style={{display:"flex",justifyContent:"center"}}>you have seen all</h4>}
                     >
              <div className="hotalData">
-                  {hotaldata && hotaldata.map((e)=><Hotalcard key={e._id} e={e} />)}
+                  {filterbedroomes && filterbedroomes.map((e)=><Hotalcard key={e._id} e={e} />)}
              </div>
        </InfiniteScroll>:<></>}
        </div>
