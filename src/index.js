@@ -4,7 +4,7 @@ import {BrowserRouter} from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { CatageryContestFun,DateContestFun,FilterContestFun} from './contest';
+import { CatageryContestFun,DateContestFun,FilterContestFun,AhuthContestFun} from './contest';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -12,7 +12,9 @@ root.render(
     <CatageryContestFun>
         <DateContestFun>
          <FilterContestFun>
-         <App/>
+          <AhuthContestFun>
+          <App/>
+          </AhuthContestFun>
          </FilterContestFun>
           </DateContestFun>  
       </CatageryContestFun>

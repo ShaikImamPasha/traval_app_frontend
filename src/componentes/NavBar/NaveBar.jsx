@@ -1,17 +1,23 @@
 import "./NavBar.css";
 import { Sling as Hamburger } from 'hamburger-react';
-import { useDatacontest } from "../../contest";
+import { AuthLoginSignUp } from "../AuthLoginSignUp/AuthLoginSignUp";
+import { useDatacontest,useAuthcontest } from "../../contest";
 export const NaveBar=()=>{
-    const { CheackIn,
-        CheackOut,
-        guests,
-        destination}=useDatacontest();
+    const { CheackIn, CheackOut,guests,destination}=useDatacontest();
     const {setDate}=useDatacontest();
+    const {uthDispatch,isModelOpen}=useAuthcontest();
     const dateFun=()=>{
         setDate({
             type:"open_search_bar"
         })
     }
+    const changeAuthModel=()=>{
+        uthDispatch(
+            {
+                type:"openauth"
+            }
+        )
+  }
     return(
         <>
         <header className="main1">
@@ -41,13 +47,16 @@ export const NaveBar=()=>{
   <div>
     <nav className="d-flex align-center gap-large">
             <div className="nav d-flex align-center cursor-pointer">
-               <span className="material-icons-outlined">
+               <span onClick={changeAuthModel} className="material-icons-outlined">
                  <Hamburger size={30}></Hamburger>
                 </span>
                 <span classNaame="material-icons-outlined">
                
                </span>
             </div>
+            <span>
+                  {isModelOpen&&<AuthLoginSignUp></AuthLoginSignUp>}
+                </span>
     </nav>
     </div>
 </header>

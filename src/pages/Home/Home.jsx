@@ -1,11 +1,11 @@
-import { NaveBar,Hotalcard,Loader,Catagerys,SearchBar, HotalDetails,Filter } from "../../componentes";
+import { NaveBar,Hotalcard,Loader,Catagerys,SearchBar, HotalDetails,Filter,AuthLogin,AuthSignUp} from "../../componentes";
 import { useEffect,useState } from "react";
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { useCatagerycontest } from "../../contest";
-import { useDatacontest,useFiltercontest } from "../../contest";
+import { useCatagerycontest,useDatacontest,useFiltercontest,useAuthcontest} from "../../contest";
 import {getHotelsByPrice,Bedrromesbatbed,Pt,Ratingg} from "../../utils";
 import "./Home.css";
 export const Home=()=>{
+      const {isModelOpen}=useAuthcontest();
       const {isSearch}=useDatacontest();
       console.log(isSearch);
       const [l,setLoader]=useState(false);
@@ -68,6 +68,7 @@ export const Home=()=>{
       <>
       <div className="relative">
            <NaveBar></NaveBar>
+           <AuthSignUp></AuthSignUp>
            {isSearch && <SearchBar></SearchBar>}
            <Catagerys></Catagerys>
        </div>
