@@ -1,0 +1,29 @@
+.heading-1{
+    color: rgb(255, 173, 20);
+}
+.mainorder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+.confirmbooking{
+    width: 200px;
+    height: 38px;
+    border-radius: 4px;
+    background-color: rgb(255, 173, 20);
+}
+.hn
+{
+    color: rgb(255, 173, 20);
+}
+.result{
+    width: 430px;
+    height: 470px;
+    border: 1px solid rgba(0, 0, 0, 0.089);
+    border-radius: 4px;
+}
+.img{
+    width: 230px;
+    height: 200px;
+}

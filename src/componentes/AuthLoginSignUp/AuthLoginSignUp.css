@@ -1,0 +1,30 @@
+.Auth{
+    width: 350px;
+    position: absolute;
+    top: 55px;
+    border: 1px solid rgba(0, 0, 0, 0.233);
+    background-color: var(--background-color);
+    right: 10px;
+    border-radius: 4px;
+    height: 46px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.486);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin: 0PX;
+    padding: 0PX;
+}
+.log{
+    background-color: rgb(255, 173, 20);
+    border: 1px solid rgba(0, 0, 0, 0.384);
+    cursor: pointer;
+    height: 43px;
+}
+.log1{
+    width: 170px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

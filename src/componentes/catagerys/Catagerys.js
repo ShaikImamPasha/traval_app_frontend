@@ -12,7 +12,7 @@ export const Catagerys=()=>{
    const {catageryState,setCatgeryState}=useCatagerycontest();
     useEffect(()=>{
                (async()=>{
-               const {data}=await axios.get("https://filthy-gray-coral.cyclic.app/api/catagery_details")
+               const {data}=await axios.get("https://zany-cyan-cockroach-cuff.cyclic.app/api/catagery_details")
                 setCatagerys(data.slice(cI,cI+10));     
                 console.log(data);  
                }

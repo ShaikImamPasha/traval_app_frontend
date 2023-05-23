@@ -11,7 +11,7 @@ export const SearchBar=()=>{
     const {setDate,destination,guests,close_searcresult}=useDatacontest();
     useEffect(()=>{
         (async ()=>{
-          fetch(`https://filthy-gray-coral.cyclic.app/api/hotels_details?category=${catageryState}`)
+          fetch(`https://zany-cyan-cockroach-cuff.cyclic.app/api/hotels_details?category=${catageryState}`)
                   .then(res=> res.json())
                   .then((D)=>{
                     setHotaldata(D);
@@ -55,7 +55,7 @@ export const SearchBar=()=>{
              {close_searcresult &&
                   <div>
                   <div className="destination">
-                      {destinationdata.map(({address,state})=><p onClick={()=>changedestinationvalue(address)} >{address},{state}</p>)}
+               {destinationdata.map(({address,state})=><p onClick={()=>changedestinationvalue(address)} >{address},{state}</p>)}
                   </div>
                   </div>
                }

@@ -2,10 +2,12 @@ import "./NavBar.css";
 import { Sling as Hamburger } from 'hamburger-react';
 import { AuthLoginSignUp } from "../AuthLoginSignUp/AuthLoginSignUp";
 import { useDatacontest,useAuthcontest } from "../../contest";
+import { MdAccountCircle } from 'react-icons/md';
+import {LogoutLogin} from "../index";
 export const NaveBar=()=>{
     const { CheackIn, CheackOut,guests,destination}=useDatacontest();
     const {setDate}=useDatacontest();
-    const {uthDispatch,isModelOpen}=useAuthcontest();
+    const {uthDispatch,isModelOpen,account,logout,name}=useAuthcontest();
     const dateFun=()=>{
         setDate({
             type:"open_search_bar"
@@ -17,6 +19,13 @@ export const NaveBar=()=>{
                 type:"openauth"
             }
         )
+  }
+  const openLogOut=()=>{
+    uthDispatch(
+        {
+            type:"logout"
+        }
+    )
   }
     return(
         <>
@@ -48,16 +57,22 @@ export const NaveBar=()=>{
     <nav className="d-flex align-center gap-large">
             <div className="nav d-flex align-center cursor-pointer">
                <span onClick={changeAuthModel} className="material-icons-outlined">
-                 <Hamburger size={30}></Hamburger>
+                {!account && <Hamburger size={30}></Hamburger>}
                 </span>
+                {account && <span>hii,{name}</span>}
+        {account && <MdAccountCircle className="cursor" onClick={openLogOut} size={50}></MdAccountCircle>}
+                <div className="cursor">
+                {logout && <LogoutLogin></LogoutLogin>}
+                </div>
                 <span classNaame="material-icons-outlined">
-               
                </span>
             </div>
-            <span>
+    </nav>
+    <div>
+    <span>
                   {isModelOpen&&<AuthLoginSignUp></AuthLoginSignUp>}
                 </span>
-    </nav>
+    </div>
     </div>
 </header>
 </>

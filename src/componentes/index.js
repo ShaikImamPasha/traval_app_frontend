@@ -11,3 +11,4 @@ export {Filter} from "./Filters";
 export {AuthLogin} from "./Auth/AuthLogin.jsx";
 export {AuthSignUp} from "./Auth/AuthSignUp.jsx";
 export {AuthLoginSignUp} from "./AuthLoginSignUp/AuthLoginSignUp.jsx";
+export {LogoutLogin} from "./LogoutandLogin/LogoutLogin.jsx";

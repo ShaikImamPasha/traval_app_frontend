@@ -5,7 +5,7 @@ import { useCatagerycontest,useDatacontest,useFiltercontest,useAuthcontest} from
 import {getHotelsByPrice,Bedrromesbatbed,Pt,Ratingg} from "../../utils";
 import "./Home.css";
 export const Home=()=>{
-      const {isModelOpen}=useAuthcontest();
+      const {isModelOpen,isAuth}=useAuthcontest();
       const {isSearch}=useDatacontest();
       console.log(isSearch);
       const [l,setLoader]=useState(false);
@@ -19,7 +19,7 @@ export const Home=()=>{
       useEffect(()=>{
             (async ()=>{
                   try{
-              fetch(`https://filthy-gray-coral.cyclic.app/api/hotels_details?category=${catageryState}`)
+       fetch(`https://zany-cyan-cockroach-cuff.cyclic.app/api/hotels_details?category=${catageryState}`)
                       .then(res=> res.json())
                       .then((D)=>{
                         setIntiailloader(false);
@@ -68,7 +68,8 @@ export const Home=()=>{
       <>
       <div className="relative">
            <NaveBar></NaveBar>
-           <AuthSignUp></AuthSignUp>
+ {isModelOpen && isAuth==="login"?<AuthLogin></AuthLogin>:
+ isModelOpen && isAuth==="singnup"?<AuthSignUp></AuthSignUp>:null}
            {isSearch && <SearchBar></SearchBar>}
            <Catagerys></Catagerys>
        </div>

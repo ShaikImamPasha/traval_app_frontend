@@ -3,14 +3,19 @@ import {AiFillStar} from "react-icons/ai";
 import "./PriceDetails.css";
 import { DateSelector } from "../DateSelector/DateSelector";
 import {useDatacontest} from "../../contest";
+import { useNavigate } from "react-router-dom";
 export const PriceDetails=({data})=>{
-   const {price,rating}=data;
+   const {price,rating,_id}=data;
+   var navigate=useNavigate();
    const {guests,setDate}=useDatacontest();
    const handelGusts=(event)=>{
   setDate({
     type:"guests",
     payload:event.target.value
   })
+   }
+   const finalOrder=()=>{
+      navigate(`/finalOrder/${_id}`)
    }
     return(
         <>
@@ -47,7 +52,7 @@ export const PriceDetails=({data})=>{
                 <br></br>
                 <div>
                     <div>
-                        <button className="Button cursor">Reserve</button>
+                        <button onClick={finalOrder} className="Button cursor">Reserve</button>
                     </div>
                 </div>
                 <div className="">
