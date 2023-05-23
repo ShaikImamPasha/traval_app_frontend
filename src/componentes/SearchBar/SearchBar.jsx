@@ -48,18 +48,17 @@ export const SearchBar=()=>{
   address.toLowerCase().includes(destination.toLowerCase())||city.toLowerCase().includes(destination.toLowerCase())
   || state.toLowerCase().includes(destination.toLowerCase()) ||country.toLowerCase().includes(destination.toLowerCase()))
   return(
+    <div className="smain">
         <div className="searchBar">
             <div>
                 <label>Where</label>
         <div><input value={destination} onFocus={onchangeFoces} placeholder="search Destination"onChange={changedestination}></input>
-             {close_searcresult &&
-                  <div>
+                </div>
+                {close_searcresult &&
                   <div className="destination">
                {destinationdata.map(({address,state})=><p onClick={()=>changedestinationvalue(address)} >{address},{state}</p>)}
                   </div>
-                  </div>
                }
-                </div>
             </div>
             <div>
                 <label>Check In</label>
@@ -82,6 +81,7 @@ export const SearchBar=()=>{
                </div>
             </div>
             <button className="ser1 cursor" type="submit" onClick={openSearchResult}> <i class="fa fa-search"></i></button>
+        </div>
         </div>
     )
 }

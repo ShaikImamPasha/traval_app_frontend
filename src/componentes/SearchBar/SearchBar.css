@@ -1,12 +1,12 @@
 .searchBar{
+    border: 1px solid black;
     display: flex;  
     justify-content: center; 
     align-items: center;
     position: absolute;
     background-color: white;
-    margin-left: 450px;
-    border: 1px solid rgba(0, 0, 0, 0.342);
     border-radius: 5px;
+    flex-wrap: wrap;
 }
 .ser1{
     width: 80px;
@@ -26,4 +26,9 @@ input{
     overflow-y:auto;
     width: 190px;
   height: 350px;
+}
+.smain{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
