@@ -23,7 +23,6 @@ export const SearchResultPage=()=>{
  const srd=Hotaldata.filter(({address,city,state,country})=>
   address.toLowerCase()===destination.toLowerCase() ||city.toLowerCase()===destination.toLowerCase()
   || state.toLowerCase()===destination.toLowerCase() ||country.toLowerCase()===destination.toLowerCase())
-  console.log(srd);
     return(<>
     <NaveBar></NaveBar>
     {isModelOpen && isAuth==="login"?<AuthLogin></AuthLogin>:

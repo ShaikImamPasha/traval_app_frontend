@@ -2,9 +2,9 @@ import "./HotalImages.css";
 export const HotalImages=({data})=>{
     const {image,imageArr,name,country}=data;
     return(<>
-       <div><h3 style={{paddingLeft: "150px"}}>{name},{country}</h3></div>
        <div className="flex"> 
             <div>
+            <div><h3 >{name},{country}</h3></div>
                  <img className="mainimage" src={image}></img>
             </div>
             <div>

@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     gap: 100px;
+    flex-wrap: wrap;
 }
 .confirmbooking{
     width: 200px;
