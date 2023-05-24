@@ -7,7 +7,6 @@ export const Servises=async(Name,Number,Email,Password)=>{
     email:Email,
     password:Password
        })
-       console.log(data);
     }
     catch(error){
         console.log(error);

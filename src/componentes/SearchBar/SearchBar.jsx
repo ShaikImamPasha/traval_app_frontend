@@ -56,7 +56,7 @@ export const SearchBar=()=>{
                 </div>
                 {close_searcresult &&
                   <div className="destination">
-               {destinationdata.map(({address,state})=><p onClick={()=>changedestinationvalue(address)} >{address},{state}</p>)}
+               {destinationdata.map(({address,state},id)=><p key={id} onClick={()=>changedestinationvalue(address)} >{address},{state}</p>)}
                   </div>
                }
             </div>
@@ -80,7 +80,7 @@ export const SearchBar=()=>{
                <input placeholder="Add guests"  value={guests}onChange={changeguets}></input>
                </div>
             </div>
-            <button className="ser1 cursor" type="submit" onClick={openSearchResult}> <i class="fa fa-search"></i></button>
+            <button className="ser1 cursor" type="submit" onClick={openSearchResult}> <i className="fa fa-search"></i></button>
         </div>
         </div>
     )

@@ -2,10 +2,11 @@ import "./Order.css";
 import { useNavigate } from "react-router-dom";
 import {useParams} from "react-router-dom";
 import { useState,useEffect } from "react";
-import { useDatacontest } from "../../contest";
+import { useDatacontest,useAuthcontest } from "../../contest";
 import axios from "axios";
 export const Order=()=>{
   const {CheackIn,CheackOut,guests}=useDatacontest();
+  const {name}=useAuthcontest();
     const {id}=useParams();
     const [data1,setData]=useState([]);
     var navigate=useNavigate();
@@ -30,6 +31,11 @@ export const Order=()=>{
   };
 
   const handleConfirmBookingClick = async () => {
+    console.log(name);
+    if(name===null){
+      window.alert("please login");
+      return;
+    }
     const response = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
     );
@@ -38,7 +44,7 @@ export const Order=()=>{
     }
 
     const options = {
-      key: "wsnwsnwkw",
+      key: "djnnnc",
       amount: totalPayableAmount * 100,
       currency: "INR",
       name: "TravelO",

@@ -7,7 +7,6 @@ import "./Home.css";
 export const Home=()=>{
       const {isModelOpen,isAuth}=useAuthcontest();
       const {isSearch}=useDatacontest();
-      console.log(isSearch);
       const [l,setLoader]=useState(false);
       const [intiaill,setIntiailloader]=useState(true);
       const {catageryState}=useCatagerycontest();
@@ -36,7 +35,6 @@ export const Home=()=>{
                         else{
                               sethasMore(true);
                         }
-                        console.log(D);
                       })
                   }
                   catch(error){

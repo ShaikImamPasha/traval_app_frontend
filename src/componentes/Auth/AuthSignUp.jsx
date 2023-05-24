@@ -56,9 +56,9 @@ export const AuthSignUp=()=>{
             <label>Email<span className="star">*</span></label>
             <input className="in" defaultValue={Email} onChange={changeEmail} placeholder="Enter Email" required></input>
             <label>Password <span className="star">*</span></label>
-            <input className="in" defaultValue={Password} onChange={changePassword} placeholder="Enter Password" required></input>
+            <input className="in" defaultValue={Password} type="password" onChange={changePassword} placeholder="Enter Password" required></input>
             <label>Confirm Password <span className="star">*</span></label>
-            <input className="in" defaultValue={ConfirmPassword} onChange={changeConfirmPassword} placeholder="Enter Password" required></input>
+            <input className="in" defaultValue={ConfirmPassword} type="password" onChange={changeConfirmPassword} placeholder="Enter Password" required></input>
             <button className="verify cursor">Submit</button>
         </form>
     </div>

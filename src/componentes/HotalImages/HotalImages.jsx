@@ -11,9 +11,7 @@ export const HotalImages=({data})=>{
                 <span className="subimageflex">
                {imageArr && imageArr.map((e,id)=>{
                 return(
-                    <>
-                          <img className="subImage" src={e}></img>
-                    </>
+                          <img key={id}className="subImage" src={e}></img>
                 )
                })}
                </span>

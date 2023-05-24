@@ -14,7 +14,6 @@ export const Catagerys=()=>{
                (async()=>{
                const {data}=await axios.get("https://zany-cyan-cockroach-cuff.cyclic.app/api/catagery_details")
                 setCatagerys(data.slice(cI,cI+10));     
-                console.log(data);  
                }
                )()
     },[cI])
@@ -37,7 +36,7 @@ export const Catagerys=()=>{
         <section className="category">
             {cI>=10 &&  <AiOutlineLeft onClick={dec}></AiOutlineLeft>}
             {catagerys.map((e,id)=>{
-                return <span className={`${catageryState==e.category ? "ca":""} `} onClick={()=>cset(e.category)}>{e.category}</span>
+                return <span  key={id} className={`${catageryState==e.category ? "ca":""} `} onClick={()=>cset(e.category)}>{e.category}</span>
             })}
            {cI<=10 &&  <AiOutlineRight onClick={inc}></AiOutlineRight> }
            <div className="filter" onClick={onchangefilter}>

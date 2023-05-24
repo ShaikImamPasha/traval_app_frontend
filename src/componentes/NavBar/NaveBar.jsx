@@ -49,7 +49,7 @@ export const NaveBar=()=>{
             })}`
             : "Any Week"}</span>
             <span className="form-option">{guests>0 ?`${guests} guests`:"anywhere"}</span>
-             <button className="ser" type="submit"><i class="fa fa-search"></i></button>
+             <button className="ser" type="submit"><i className="fa fa-search"></i></button>
             </div>
         </h1>
   </div>
@@ -64,7 +64,7 @@ export const NaveBar=()=>{
                 <div className="cursor">
                 {logout && <LogoutLogin></LogoutLogin>}
                 </div>
-                <span classNaame="material-icons-outlined">
+                <span className="material-icons-outlined">
                </span>
             </div>
     </nav>

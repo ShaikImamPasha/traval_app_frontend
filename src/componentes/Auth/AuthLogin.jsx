@@ -19,7 +19,6 @@ export const AuthLogin=()=>{
     const loginfun=async(event)=>{
         event.preventDefault();
        let data=await Login(Number,Password);
-       console.log(data);
        uthDispatch({
         type:"clear"
     })
@@ -53,7 +52,7 @@ export const AuthLogin=()=>{
             <label>Mobile Number<span className="star">*</span></label>
             <input className="in" onChange={changeNumber} defaultValue={Number} maxLength={10} placeholder="Enter Mobile Number" required></input>
             <label>Password <span className="star">*</span></label>
-            <input className="in" onChange={changePassword} defaultValue={Password} placeholder="Enter Password" required></input>
+            <input className="in" type="password" onChange={changePassword} defaultValue={Password} placeholder="Enter Password" required></input>
             <button onClick={loginfun} className="LTC cursor">Login</button>
             <div>
                 <p>or</p>
