@@ -71,7 +71,7 @@ export const Home=()=>{
            {isSearch && <SearchBar></SearchBar>}
            <Catagerys></Catagerys>
        </div>
-       <div className="absolute">
+       <div>
             {isFiltermodel &&<Filter></Filter>}
        </div>
        <div className="middle">

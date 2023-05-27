@@ -17,7 +17,7 @@ export const Filter=()=>{
    return(
     <>
     <div className="filtermain1">
-    <div className="filtermain">
+    <div className="filtermain absolute">
       <div className="filterclose">
             <h3 className="pc">Filter</h3>
             <AiOutlineClose onClick={clodefilter} className="cursor"></AiOutlineClose>
